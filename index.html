@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style/main.css">
+    <title>Cult'Création</title>
+</head>
+<body>
+    <figure>
+        <img src="./img/logo.png" alt="Logo Cult'Création">
+    </figure>
+    <div id="maDiv" class="maDiv visible"></div>
+    <div id="csvData">
+        <h2>Malus :</h2>
+        <p id="resultat"></p>
+    </div>
+    <button onclick="getCSVData()" id="button">Generate malus</button>
+
+    <script>
+        const tableauMalus = ["-1 pieces", "-2 pieces", "1 turn off", "Take 2 difficult questions for 2 turns"];
+
+        function genererMalusAleatoire() {
+            const random = Math.floor(Math.random() * tableauMalus.length);
+
+            const randomMalus = tableauMalus[random];
+
+            document.getElementById("resultat").textContent = randomMalus;
+        }
+
+        document.getElementById("button").addEventListener("click", genererMalusAleatoire);
+
+        const button = document.getElementById('button');
+        const maDiv = document.getElementById('maDiv');
+
+        button.addEventListener('click', function() {
+            maDiv.classList.add('breathingAnimation');
+
+            maDiv.classList.remove('visible');
+
+            setTimeout(function() {
+                maDiv.classList.remove('breathingAnimation');
+                maDiv.classList.add('visible');
+            }, 1990);
+        });
+    </script>
+</body>
+</html>
