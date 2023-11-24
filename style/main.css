@@ -65,7 +65,7 @@ button{
     border: solid 2px var(--btn);
 }
 #csvData{
-    height: 370px;
+    height: 310px;
     margin-top: 160px;
 }
 #csvData h2{
@@ -84,7 +84,7 @@ button{
     background: radial-gradient(circle, var(--btn) 35%, rgba(255, 182, 193, 0) 55%);
     animation: breathing 2s infinite;
     position: absolute;
-    top: calc(50% - 170px);
+    top: calc(50% - 150px);
     left: calc(50% - 200px);
 }
 .visible{
